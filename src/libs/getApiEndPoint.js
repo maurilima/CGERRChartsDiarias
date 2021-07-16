@@ -1,13 +1,14 @@
 import { getAuthKey } from "./getApiKey.js";
-import { auth } from "../config/Config.js";
+
 const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/api/v1/';
 // diarias/totais-diarias-por-secretaria-por-exercicio?exercicio=2018&limiteDeRegistros=15';
 
  let headerAuth = new Headers;
  let apiKey = await getAuthKey();
-  auth = 'Bearer ' + apiKey.access_token;
+ console.log(apiKey)
+ let auth = 'Bearer ' + apiKey.access_token;
  headerAuth.append('Accept', 'application/json');
- headerAuth.append('Authorization', Config.auth );
+ headerAuth.append('Authorization', auth );
 //  headerAuth.append( 'Content-Type','application/x-www-form-urlencoded')
 
 export async function getApisEndPoint(raw, endPoint){

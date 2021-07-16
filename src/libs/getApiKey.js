@@ -1,8 +1,9 @@
+import { AUTH, BASE_URL } from "../config/Config.js";
 
 let headerAuth = new Headers;
 
 headerAuth.append('Accept', 'application/json');
-headerAuth.append('Authorization', auth );
+headerAuth.append('Authorization', AUTH );
 headerAuth.append( 'Content-Type','application/x-www-form-urlencoded')
 
 export async function getAuthKey(){
