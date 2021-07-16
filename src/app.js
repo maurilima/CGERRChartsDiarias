@@ -1,3 +1,4 @@
+import { URL_TDSE } from "./config/Config.js";
 import { getApisEndPoint } from "./libs/getApiEndPoint.js";
 // import { getAuthKey } from "./libs/getApiKey.js";
 
@@ -6,9 +7,9 @@ let raw = {
      limiteDeRegistros : 15
 }
 
-let apiKey = await getApisEndPoint(raw, 'diarias/totais-diarias-por-secretaria-por-exercicio?');
+let result = await getApisEndPoint(raw, URL_TDSE);
 
-console.log(apiKey)
+console.log(result)
 
 
 // let h = new Headers();

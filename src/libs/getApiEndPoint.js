@@ -5,17 +5,14 @@ const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/api/v1/';
 
  let headerAuth = new Headers;
  let apiKey = await getAuthKey();
- console.log(apiKey)
  let auth = 'Bearer ' + apiKey.access_token;
  headerAuth.append('Accept', 'application/json');
  headerAuth.append('Authorization', auth );
-//  headerAuth.append( 'Content-Type','application/x-www-form-urlencoded')
 
 export async function getApisEndPoint(raw, endPoint){
     let queryString =  Object.keys(raw)
                       .map(key =>`${ encodeURIComponent(key)}=${encodeURIComponent(raw[key])}`)
                       .join('&')
-                      console.log(queryString)
     var requestOptions = {
       method: 'GET',
       mode: 'cors',
