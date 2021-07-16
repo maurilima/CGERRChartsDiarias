@@ -1,12 +1,13 @@
-let h = new Headers();
+
 // myHeaders.append("Content-Type", "application/json");
 
-const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/oauth/token'
-let userPw = 'ewfWEF55465#@#',
-var Usename = 'portal_transparencia'
-let encoded = btoa(userPw+':'+Usename);
-let auth = 'Basic ' + encoded;
-
+// const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/';
+// const END_AUTH = 'transparencia/oauth/token'
+// let userPw = 'ewfWEF55465#@#',
+// var Usename = 'portal_transparencia'
+// let encoded = btoa(userPw+':'+Usename);
+// let auth = 'Basic ' + encoded;
+let h = new Headers();
 
 h.append('Accept', 'application/json');
 h.append('Authorization', auth );

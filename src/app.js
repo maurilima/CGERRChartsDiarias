@@ -1,40 +1,54 @@
-let h = new Headers();
-// myHeaders.append("Content-Type", "application/json");
+import { getApisEndPoint } from "./libs/getApiEndPoint.js";
+// import { getAuthKey } from "./libs/getApiKey.js";
 
-const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/oauth/token'
-let userPw = 'ewfWEF55465#@#';
-var Usename = 'portal_transparencia'
-let encoded = btoa(userPw+':'+Usename);
-let auth = 'Basic ' + encoded;
-let formdata = new FormData();
+let raw = {
+     execicio : '2018',
+     limiteDeRegistros : 15
+}
 
+let apiKey = await getApisEndPoint(raw, 'diarias/totais-diarias-por-secretaria-por-exercicio?');
 
-
-formdata.append('grant_type','client_credentials');
-// formdata.append('username','testname');
+console.log(apiKey)
 
 
-h.append('Accept', 'application/json');
-h.append('Authorization', auth );
-h.append( 'Content-Type','application/x-www-form-urlencoded')
-console.log(auth);
+// let h = new Headers();
+// // myHeaders.append("Content-Type", "application/json");
 
-let req = new Request(BASE_URL, {
-    method: 'POST',
-    headers:h,
-    body : formdata
- 
-
-})
+// const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/oauth/token'
+// let userPw = 'ewfWEF55465#@#';
+// var Usename = 'portal_transparencia'
+// let encoded = btoa(Usename+':'+userPw);
+// let auth = 'Basic ' + encoded;
 
 
 
 
+// let raw  =  ['grant_type=client_credentials']
+// h.append('Accept', 'application/json');
+// h.append('Authorization', auth );
+// h.append( 'Content-Type','application/x-www-form-urlencoded')
+// console.log(auth);
 
-fetch(req)
-.then(response => {
-  console.log(response);
-})
-.catch(err => {
-  console.error(err);
-});
+// let req = new Request(BASE_URL, {
+//     method: 'POST',
+//     headers:h,
+//     body : raw 
+
+// })
+
+
+
+
+
+// fetch(req)
+// .then(response => {
+//   response.json().then(
+//       json => {
+//           console.log(json);
+      
+//       }
+//   )
+//     })
+// .catch(err => {
+//   console.error(err);
+// });
