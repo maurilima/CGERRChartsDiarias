@@ -1,8 +1,3 @@
-const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/oauth/token';
-let userPw = 'ewfWEF55465#@#';
-var userName = 'portal_transparencia';
-let encoded = btoa(userName+':'+userPw);
-let auth = 'Basic ' + encoded;
 
 let headerAuth = new Headers;
 
