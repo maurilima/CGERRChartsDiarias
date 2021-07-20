@@ -9,7 +9,7 @@ const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/api/v1/';
  headerAuth.append('Accept', 'application/json');
  headerAuth.append('Authorization', auth );
 
-export async function getApisEndPoint(raw, endPoint){
+export async function getApiEndPoint(raw, endPoint){
     let queryString =  Object.keys(raw)
                       .map(key =>`${ encodeURIComponent(key)}=${encodeURIComponent(raw[key])}`)
                       .join('&')
