@@ -2,12 +2,15 @@ import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js"
 
 
 
-renderChartDiariasOrgao()
 document.addEventListener("DOMContentLoaded", function (event) {
      console.log("DOM completamente carregado e analisado");
 
      
 });
+
+
+
+renderChartDiariasOrgao()
 
   
 

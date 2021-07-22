@@ -9,7 +9,7 @@ export async function renderChartDiariasOrgao(){
      let divCharts = document.getElementById('chartsDiariaOrgao')
      let lraw = {
           execicio: yearToday,
-          limiteDeRegistros: 12
+          limiteDeRegistros: 10
      }     
      let retorno = await getApiEndPoint(lraw, URL_TDSE);
      let lSerie = retorno.map(item => parseFloat2Decimals(item.total))
@@ -25,7 +25,7 @@ export async function renderChartDiariasOrgao(){
      let options = {
           chart: {
                type: 'bar',
-               width: '90%',
+               width: '100%',
                height: 400
           },
           plotOptions: {
