@@ -1,4 +1,5 @@
 import { URL_TDSE } from "../config/Config.js";
+import { listaLegenda } from "../legenda/listaLeganda.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
 
@@ -13,14 +14,7 @@ export async function renderChartDiariasOrgao(){
      }     
      let retorno = await getApiEndPoint(lraw, URL_TDSE);
      let lSerie = retorno.map(item => parseFloat2Decimals(item.total))
-     let lLabels = retorno.map(item => item.codigoUnidadeorcamentaria)
-     let legenda = retorno.map(item => {
-          return {
-               codigo: item.codigoUnidadeorcamentaria,
-               descricao: item.descricaoUnidadeOrcamentaria,
-          }
-     }
-     );     
+     let lLabels = retorno.map(item => item.sigla)
 
      let options = {
           chart: {
@@ -52,7 +46,7 @@ export async function renderChartDiariasOrgao(){
                formatter: function (val, opts) {
                     return val.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                },
-               offsetY: -15,
+               offsetY: -16,
                style: {
                     fontSize: '11px',
                     colors: ["#304758"]
@@ -71,7 +65,7 @@ export async function renderChartDiariasOrgao(){
                }
           },
           title: {
-               text: 'Top 10 de Gasto com Diárias',
+               text: 'Top 10 UO por Gasto com Diárias',
                align: 'left'
           },
      }
