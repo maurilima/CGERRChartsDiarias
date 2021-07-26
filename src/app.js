@@ -1,4 +1,5 @@
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
+import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
 
 
 
@@ -10,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-renderChartDiariasOrgao()
+renderChartDiariasOrgao();
+renderChartDiariasServidor();
 
   
 

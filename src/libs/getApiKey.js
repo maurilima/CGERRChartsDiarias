@@ -1,4 +1,5 @@
-import { AUTH, BASE_URL } from "../config/Config.js";
+import { AUTH, BASE_AUTH } from "../config/Config.js";
+import { BASE_URL } from "../config/urlApi.js";
 
 let headerAuth = new Headers;
 
@@ -14,7 +15,7 @@ export async function getAuthKey(){
       body: ['grant_type=client_credentials']
     }; 
     try {
-        let res = await fetch(BASE_URL, requestOptions);
+        let res = await fetch(BASE_URL+BASE_AUTH, requestOptions);
         return await res.json();
     } catch (error) {
         console.log(error)

@@ -14,3 +14,20 @@ export function listaLegenda(data) {
     return   
 
 }
+
+export function listaLegendaSimples(itens,data) {
+    let list =  document.querySelector('ul');
+ 
+    let Lista = [] 
+    for(var i=0; i<data.length; i++) {
+        Lista.push({codigo:itens[i],descricao:data[i]}) 
+    }
+
+    let legenda = Lista.map((item, i) =>{
+        return  `<li> ${item.codigo} - ${item.descricao}</li>`;
+    })
+    list.innerHTML = legenda
+
+    return   
+
+}

@@ -1,5 +1,4 @@
-import { URL_TDSE } from "../config/Config.js";
-import { listaLegenda } from "../legenda/listaLeganda.js";
+import { URL_TDSE } from "../config/urlApi.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
 
@@ -20,7 +19,7 @@ export async function renderChartDiariasOrgao(){
           chart: {
                type: 'bar',
                width: '100%',
-               height: 400
+               height: 350
           },
           plotOptions: {
                bar: {
@@ -65,7 +64,7 @@ export async function renderChartDiariasOrgao(){
                }
           },
           title: {
-               text: 'Top 10 UO por Gasto com Diárias',
+               text: 'Top 10 Unidade Orçamentaria por Gasto com Diárias Exercicio :'+yearToday,
                align: 'left'
           },
      }
