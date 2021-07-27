@@ -1,6 +1,8 @@
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
 import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
 
+let yearToday = new Date().getFullYear();
+
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -11,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-renderChartDiariasOrgao();
-renderChartDiariasServidor();
+renderChartDiariasOrgao(yearToday);
+renderChartDiariasServidor(yearToday);
 
   
 

@@ -1,10 +1,10 @@
-import { URL_TDSE } from "../config/urlApi.js";
+import { URL_TDSE } from "../libs/urlApi.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
 
 
-export async function renderChartDiariasOrgao(){
-     let yearToday = new Date().getFullYear();
+export async function renderChartDiariasOrgao(yearToday){
+     // let yearToday = new Date().getFullYear();
 
      let divCharts = document.getElementById('chartsDiariaOrgao')
      let lraw = {

@@ -1,5 +1,5 @@
 import { AUTH, BASE_AUTH } from "../config/Config.js";
-import { BASE_URL } from "../config/urlApi.js";
+import { BASE_URL } from "../libs/urlApi.js";
 
 let headerAuth = new Headers;
 

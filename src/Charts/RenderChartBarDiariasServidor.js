@@ -1,4 +1,4 @@
-import { URL_TDPS } from "../config/urlApi.js";
+import { URL_TDPS } from "../libs/urlApi.js";
 import { listaLegendaSimples } from "../legenda/listaLeganda.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
@@ -7,8 +7,8 @@ import { parseFloat2Decimals } from '../libs/lib.js';
 let Labels = ['1º','2º','3º','4º','5º','6º','7º','8º','9º','10º', ]
 
 
-export async function renderChartDiariasServidor(){
-     let yearToday = new Date().getFullYear();
+export async function renderChartDiariasServidor(yearToday){
+     // let yearToday = new Date().getFullYear();
 
      let divCharts = document.getElementById('chartsDiariaServidor')
      let lraw = {
@@ -35,7 +35,7 @@ export async function renderChartDiariasServidor(){
         
      let Legends = retorno.map( item  => {
         
-        if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return item.nomeCredor}
+        if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return item.cpf+'-'+item.nomeCredor}
         else {return false}
        }
     )

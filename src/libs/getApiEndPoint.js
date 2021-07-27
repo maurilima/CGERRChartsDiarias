@@ -1,5 +1,5 @@
 
-import { BASE_URL } from "../config/urlApi.js";
+import { BASE_URL } from "../libs/urlApi.js";
 import { getAuthKey } from "./getApiKey.js";
 
 
