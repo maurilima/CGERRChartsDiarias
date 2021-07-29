@@ -1,14 +1,21 @@
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
 import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
+// import { validateYear } from "./libs/lib.js";
 
 let yearToday = new Date().getFullYear();
 
+let btnYearUnidade = document.getElementById("btnChartUO")
+
+let btnChartServidor = document.getElementById("btnChartServidor")
+
+btnYearUnidade.addEventListener('click', validateYearUO, true);
+btnChartServidor.addEventListener('click', validateYearServidor, true);
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
      console.log("DOM completamente carregado e analisado");
 
-     
+
 });
 
 
@@ -16,77 +23,41 @@ document.addEventListener("DOMContentLoaded", function (event) {
 renderChartDiariasOrgao(yearToday);
 renderChartDiariasServidor(yearToday);
 
-  
 
 
-
-
-     // console.log("entra")
-     // let retorno = await getApiEndPoint(lraw, URL_TDSE);
-     // let lSerie = retorno.map(item => parseFloat2Decimals(item.total))
-     // let lLabels = retorno.map(item => item.codigoUnidadeorcamentaria)
-     // let legenda = retorno.map(item => {
-     //      return {
-     //           codigo: item.codigoUnidadeorcamentaria,
-     //           descricao: item.descricaoUnidadeOrcamentaria,
-     //      }
+function validateYearUO() {
+     let yearEnter = document.getElementById("yearUO").value;
+     if (validateDate(yearEnter,yearToday)) {
+          renderChartDiariasOrgao(yearEnter);
+     }
+     // if (yearSelected === '') yearSelected = YearToday;
+     // if (parseInt(yearSelected) <= 1980 | parseInt(yearSelected) > YearToday) {
+     //   alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
      // }
-     // );     
+     // else {
 
-     // let options = {
-     //      chart: {
-     //           type: 'bar',
-     //           width: '90%',
-     //           height: 400
-     //      },
-     //      plotOptions: {
-     //           bar: {
-     //                borderRadius: 4,
-     //                horizontal: false,
-     //                dataLabels: {
-     //                     position: 'top', // top, center, bottom
-     //                },
-     //           }
-     //      },
-     //      series: [
-     //           {
-     //                name: 'Total diarias',
-     //                data: lSerie
-     //           }],
-     //      dataLabels: {
-     //           enabled: true,
-     //           position: 'top',
-     //           style: {
-     //                colors: ['#fff'],
-     //           },
-
-     //           formatter: function (val, opts) {
-     //                return val.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-     //           },
-     //           offsetY: -15,
-     //           style: {
-     //                fontSize: '11px',
-     //                colors: ["#304758"]
-     //           }
-     //      },
-
-     //      xaxis: {
-     //           categories: lLabels,
-     //      },
-     //      grid: {
-     //           show: true,
-     //           xaxis: {
-     //                lines: {
-     //                     show: true
-     //                }
-     //           }
-     //      },
-     //      title: {
-     //           text: 'Top 10 de Gasto com Diárias',
-     //           align: 'left'
-     //      },
      // }
+}
 
-     // let chart = new ApexCharts(divCharts, options)
-     // chart.render();
+function validateYearServidor() {
+     let yearEnter = document.getElementById("YearServidor").value;
+     if (validateDate(yearEnter,yearToday)) {
+          renderChartDiariasServidor(yearEnter);
+     }
+     // if (yearSelected === '') yearSelected = YearToday;
+     // if (parseInt(yearSelected) <= 1980 | parseInt(yearSelected) > YearToday) {
+     //   alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
+     // }
+     // else {
 
+     // }
+}
+
+function validateDate(yearSelected, YearToday) {
+     if (yearSelected === '') yearSelected = YearToday;
+     if (parseInt(yearSelected) <= 1980 | parseInt(yearSelected) > YearToday) {
+          alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
+     }
+     else  return true;
+
+}

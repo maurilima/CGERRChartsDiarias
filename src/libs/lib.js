@@ -1,10 +1,21 @@
 export function parseFloat2Decimals(value) {
   if (value != null) {
-      return parseFloat(parseFloat(value).toFixed(2));
+    return parseFloat(parseFloat(value).toFixed(2));
   }
   else { return 0; }
 }
 
+
+export function validateYear(yearSelected, YearToday) {
+  // let year  = document.getElementById("year").value;
+  if (yearSelected === '') yearSelected = YearToday;
+  if (parseInt(yearSelected) <= 1980 | parseInt(yearSelected) > YearToday) {
+    alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
+  }
+  else {
+
+  }
+}
 
 
 //  totalUO.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }))

@@ -10,12 +10,15 @@ let Labels = ['1º','2º','3º','4º','5º','6º','7º','8º','9º','10º', ]
 export async function renderChartDiariasServidor(yearToday){
      // let yearToday = new Date().getFullYear();
 
+     document.getElementById("chartsDiariaServidor").innerHTML = '&nbsp;';     
      let divCharts = document.getElementById('chartsDiariaServidor')
      let lraw = {
-          execicio: yearToday,
+          exercicio: yearToday,
           limiteDeRegistros: 11
-     }     
+     }    
+     console.log(lraw)
      let retorno = await getApiEndPoint(lraw, URL_TDPS);
+console.log(retorno)
 
 
      //  *********************
@@ -112,7 +115,7 @@ export async function renderChartDiariasServidor(yearToday){
                }
           },
           title: {
-               text: 'Top 10 Servidores por Gasto com Diárias Exercico :'+yearToday,
+               text: 'Top 10 Servidores por Gasto com Diárias Exercico: '+yearToday,
                align: 'left'
           },
      }

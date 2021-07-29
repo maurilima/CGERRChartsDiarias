@@ -5,15 +5,23 @@ import { parseFloat2Decimals } from '../libs/lib.js';
 
 export async function renderChartDiariasOrgao(yearToday){
      // let yearToday = new Date().getFullYear();
+     //  console.log(yearToday)
+     document.getElementById("chartsDiariaOrgao").innerHTML = '&nbsp;';
 
      let divCharts = document.getElementById('chartsDiariaOrgao')
      let lraw = {
-          execicio: yearToday,
-          limiteDeRegistros: 10
-     }     
-     let retorno = await getApiEndPoint(lraw, URL_TDSE);
-     let lSerie = retorno.map(item => parseFloat2Decimals(item.total))
-     let lLabels = retorno.map(item => item.sigla)
+          exercicio: yearToday,
+          limiteDeRegistros: 10,
+     }   
+     // console.log(lraw, URL_TDSE)  ;
+     const retorno = await getApiEndPoint(lraw, URL_TDSE);
+     var lSerie = retorno.map(item => parseFloat2Decimals(item.total))
+     var lLabels = retorno.map(item => item.sigla)
+
+     console.log(retorno)
+     console.log(lSerie)
+     console.log(lLabels)
+
 
      let options = {
           chart: {
@@ -64,7 +72,7 @@ export async function renderChartDiariasOrgao(yearToday){
                }
           },
           title: {
-               text: 'Top 10 Unidade Orçamentaria por Gasto com Diárias Exercicio :'+yearToday,
+               text: 'Top 10 Unidade Orçamentaria por Gasto com Diárias Exercicio: '+yearToday,
                align: 'left'
           },
      }
