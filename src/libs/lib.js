@@ -1,3 +1,5 @@
+import { listUO } from "../../testar/UO.js";
+
 export function parseFloat2Decimals(value) {
   if (value != null) {
     return parseFloat(parseFloat(value).toFixed(2));
@@ -16,6 +18,21 @@ export function validateYear(yearSelected, YearToday) {
 
   }
 }
+
+
+export function loadUO(selector) { 
+  var listUOSorted = listUO.sort(function(a,b) { 
+    return a.descricao < b.descricao ? -1 : a.descricao > b.descricao ? 1 : 0;
+
+  })
+  let elementos = '<option value = "0"  selected disables>Selecione Unidade Orçamentaria </option>';
+   
+  for (let i = 0; i < listUOSorted.length; i++) {
+      elementos += '<option value="' + listUOSorted[i].codigo+ '">' + listUOSorted[i].descricao + '</option>'
+  }
+  selector.innerHTML = elementos;
+
+}  
 
 
 //  totalUO.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }))
@@ -69,3 +86,5 @@ export function validateYear(yearSelected, YearToday) {
 //         console.log(error)
 //     }
 // }
+
+

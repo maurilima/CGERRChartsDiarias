@@ -18,11 +18,6 @@ export async function renderChartDiariasOrgao(yearToday){
      var lSerie = retorno.map(item => parseFloat2Decimals(item.total))
      var lLabels = retorno.map(item => item.sigla)
 
-     console.log(retorno)
-     console.log(lSerie)
-     console.log(lLabels)
-
-
      let options = {
           chart: {
                type: 'bar',

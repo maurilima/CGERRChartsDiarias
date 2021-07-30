@@ -16,15 +16,12 @@ export async function renderChartDiariasServidor(yearToday){
           exercicio: yearToday,
           limiteDeRegistros: 11
      }    
-     console.log(lraw)
      let retorno = await getApiEndPoint(lraw, URL_TDPS);
-console.log(retorno)
-
 
      //  *********************
      //  POG(Programação Orientada a Gambiarras ) para resolver o problema que o Ministerio Publico
      //  Cadastra funcionarios no FIPLAN somente o custo total de Diarais
-     //  na o e Administração DIreta
+     //  não á Administração Direta
 
      let lSerie =  retorno.map(item => {
          if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return parseFloat2Decimals(item.total)
