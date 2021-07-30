@@ -1,6 +1,7 @@
 import { UO } from "../testar/UO.js";
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
 import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
+import { renderChartDiariasUOServidor } from "./Charts/RenderChartBarDiariasUOServidor.js";
 import { loadUO } from "./libs/lib.js";
 // import { validateYear } from "./libs/lib.js";
 
@@ -21,8 +22,13 @@ let yearToday = new Date().getFullYear();
 let btnYearUnidade = document.getElementById("btnChartUO")
 btnYearUnidade.addEventListener('click', validateYearUO, true);
 
-let btnChartServidor = document.getElementById("btnChartServidor")
+let btnChartServidor = document.getElementById("btnChartServidor");
 btnChartServidor.addEventListener('click', validateYearServidor, true);
+
+let btnUOServidor = document.getElementById("btnChartUOServidor");
+btnUOServidor.addEventListener('click', validDataUOServidor, true);
+
+
 
 let selectorUO = document.getElementById('selectUO');
 let selectedUO = 0;
@@ -43,14 +49,26 @@ document.addEventListener("DOMContentLoaded", function () {
 renderChartDiariasOrgao(yearToday);
 renderChartDiariasServidor(yearToday);
 
+function validDataUOServidor() {
+     let yearUOServidor = document.getElementById("YearUOServidor").value;
+     if (selectedUO === 0) {
+          alert("Selecione um Unidade Orçamentaria")
+     } else {
+          if (yearUOServidor === '') {
+               yearUOServidor = yearToday
+          }
+          if (validateDate(yearUOServidor, yearToday) ) {
+              renderChartDiariasUOServidor (selectedUO, yearToday)
+          }
+     }
 
+}
 
 function validateYearUO() {
      let yearEnter = document.getElementById("yearUO").value;
      if (validateDate(yearEnter, yearToday)) {
           renderChartDiariasOrgao(yearEnter);
      }
-
 }
 
 function validateYearServidor() {
@@ -71,7 +89,7 @@ function validateDate(yearSelected, YearToday) {
 }
 
 function SelectedUO() {
-     selectedUO =  selectUO.value;
-     console.log(selectedUO)
-   }
-   
+     selectedUO = selectUO.value;
+     // console.log(selectedUO)
+}
+

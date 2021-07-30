@@ -27,6 +27,7 @@ export async function getApiEndPoint(raw, endPoint) {
         
         headers: headerAuth,
     };
+
     try {
         let res = await fetch(BASE_URL + endPoint + queryString, requestOptions);
         // console.log(res)

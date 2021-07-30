@@ -15,8 +15,9 @@ export function listaLegenda(data) {
 
 }
 
-export function listaLegendaSimples(itens,data) {
-    let list =  document.querySelector('ul');
+export function listaLegendaSimples(itens,data, local) {
+    let list =  document.querySelector(local+ ' ul');
+
  
     let Lista = [] 
     for(var i=0; i<data.length; i++) {

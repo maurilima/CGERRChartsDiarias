@@ -48,6 +48,21 @@
     margin-left: .5rem;
 }
 
+.legendaUOS {
+    color: darkgray;
+}
+
+
+.legendaUOS ul li{
+    font-size: 0.7rem;
+    font-style: bold;
+    display: inline-block;
+    padding-right: 1px;
+    padding-left: 3px;
+    color: #8697c7;
+    margin-left: .5rem;
+}
+
 p {
     font-size: 0.7rem;
     color: #6b88da;

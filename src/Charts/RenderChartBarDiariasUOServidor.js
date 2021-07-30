@@ -1,4 +1,4 @@
-import { URL_TDPS } from "../libs/urlApi.js";
+import { URL_TDPSO } from "../libs/urlApi.js";
 import { listaLegendaSimples } from "../legenda/listaLeganda.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
@@ -7,45 +7,28 @@ import { parseFloat2Decimals } from '../libs/lib.js';
 let Labels = ['1º','2º','3º','4º','5º','6º','7º','8º','9º','10º', ]
 
 
-export async function renderChartDiariasServidor(yearToday){
+export async function renderChartDiariasUOServidor(selctedUO, yearToday){
      // let yearToday = new Date().getFullYear();
 
-     document.getElementById("chartsDiariaServidor").innerHTML = '&nbsp;';     
-     let divCharts = document.getElementById('chartsDiariaServidor')
+     document.getElementById("chartsDiariaUOServidor").innerHTML = '&nbsp;';     
+     let divCharts = document.getElementById('chartsDiariaUOServidor')
      let lraw = {
+          codigoUnidadeOrcamentaria: selctedUO,
           exercicio: yearToday,
-          limiteDeRegistros: 11
-     }    
-     let retorno = await getApiEndPoint(lraw, URL_TDPS);
+          limiteDeRegistros: 10
+     }   
+     
+     const retorno = await getApiEndPoint(lraw, URL_TDPSO);
 
-     //  *********************
-     //  POG(Programação Orientada a Gambiarras ) para resolver o problema que o Ministerio Publico
-     //  Cadastra funcionarios no FIPLAN somente o custo total de Diarais
-     //  não á Administração Direta
 
-     let lSerie =  retorno.map(item => {
-         if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return parseFloat2Decimals(item.total)
-         }
-         else {return false}
-        }
-     )
-    
-     lSerie.splice(lSerie.indexOf(false),1);
-     // ***************************************
-        
-     let Legends = retorno.map( item  => {
-        
-        if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return item.cpf+'-'+item.nomeCredor}
-        else {return false}
-       }
-    )
+     let lSerie = retorno.map(item => parseFloat2Decimals(item.total))
+   
+      
+   
+    let Legends = retorno.map( item  => item.cpf+'-'+item.nomeCredor)    
         
     Legends.splice(Legends.indexOf(false),1);    
-        
-
-     listaLegendaSimples(Labels,Legends, '.legenda');
-
-
+    listaLegendaSimples(Labels,Legends, '.legendaUOS');
 
      let options = {
           chart: {
