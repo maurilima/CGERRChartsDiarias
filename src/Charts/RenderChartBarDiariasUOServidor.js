@@ -2,6 +2,7 @@ import { URL_TDPSO } from "../libs/urlApi.js";
 import { listaLegendaSimples } from "../legenda/listaLeganda.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
+import { listUO } from "../../testar/UO.js";
 
 
 let Labels = ['1º','2º','3º','4º','5º','6º','7º','8º','9º','10º', ]
@@ -21,12 +22,16 @@ export async function renderChartDiariasUOServidor(selctedUO, yearToday){
      const retorno = await getApiEndPoint(lraw, URL_TDPSO);
 
 
-     let lSerie = retorno.map(item => parseFloat2Decimals(item.total))
+     let lSerie = retorno.map(item =>  parseFloat2Decimals(item.total))
    
       
    
     let Legends = retorno.map( item  => item.cpf+'-'+item.nomeCredor)    
-        
+    console.log(Legends)
+
+    var descr = listUO.find(el => el.codigo === selctedUO )
+     console.log(descr.codigo)
+   
     Legends.splice(Legends.indexOf(false),1);    
     listaLegendaSimples(Labels,Legends, '.legendaUOS');
 
@@ -95,7 +100,7 @@ export async function renderChartDiariasUOServidor(selctedUO, yearToday){
                }
           },
           title: {
-               text: 'Top 10 Servidores por Gasto com Diárias Exercico: '+yearToday,
+               text: 'Top 10 Servidores Diárias UO:'+ descr.descricao+  ' Exercico: '+yearToday,
                align: 'left'
           },
      }
