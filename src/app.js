@@ -2,7 +2,7 @@ import { UO } from "../testar/UO.js";
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
 import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
 import { renderChartDiariasUOServidor } from "./Charts/RenderChartBarDiariasUOServidor.js";
-import { loadUO } from "./libs/lib.js";
+import { loadUO, showMessage } from "./libs/lib.js";
 // import { validateYear } from "./libs/lib.js";
 
 
@@ -82,7 +82,8 @@ function validateYearServidor() {
 function validateDate(yearSelected, YearToday) {
      if (yearSelected === '') yearSelected = YearToday;
      if (parseInt(yearSelected) <= 1980 | parseInt(yearSelected) > YearToday) {
-          alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
+          // alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
+          showMessage()
      }
      else return true;
 

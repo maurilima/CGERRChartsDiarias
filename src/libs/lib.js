@@ -1,4 +1,5 @@
 import { listUO } from "../../testar/UO.js";
+// import Swal from 'sweetalert2/dist/sweetalert2.js' 
 
 export function parseFloat2Decimals(value) {
   if (value != null) {
@@ -12,11 +13,23 @@ export function validateYear(yearSelected, YearToday) {
   // let year  = document.getElementById("year").value;
   if (yearSelected === '') yearSelected = YearToday;
   if (parseInt(yearSelected) <= 1980 | parseInt(yearSelected) > YearToday) {
-    alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
+      showMessage()
+    // alert('Ano nao pode Ser Menor que 1980 ou maior que ' + YearToday)
   }
   else {
 
   }
+}
+
+export function showMessage( ){
+  
+  
+  Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Data Invalida',
+  // footer: '<a href="">Why do I have this issue?</a>'
+})
 }
 
 
