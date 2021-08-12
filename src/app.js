@@ -1,4 +1,4 @@
-import { UO } from "../testar/UO.js";
+import { UO } from "./testar/UO.js"
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
 import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
 import { renderChartDiariasUOServidor } from "./Charts/RenderChartBarDiariasUOServidor.js";

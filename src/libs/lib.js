@@ -1,4 +1,4 @@
-import { listUO } from "../../testar/UO.js";
+import { listUO } from "../testar/UO.js";
 // import Swal from 'sweetalert2/dist/sweetalert2.js' 
 
 export function parseFloat2Decimals(value) {
