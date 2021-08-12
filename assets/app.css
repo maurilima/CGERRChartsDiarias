@@ -113,3 +113,19 @@ input {
 .UOServidor {
     margin-top: 1rem;
 }
+
+.container {
+    /* margin-left: 1.5rem; */
+    margin-top : 2.5rem;
+}
+
+.div-select {
+    margin-bottom: 1rem; 
+    /* margin-left: -1.5rem; */
+}
+
+input{
+   border-color:darkgrey  ;
+   border-left-color:darkgrey ;
+   outline-color: darkgrey;
+}   

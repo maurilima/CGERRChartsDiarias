@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testanto BootStrap</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row g-2 rowServidor">
+            <!-- <div class="row">
+                <!-- <div class="col-3">
+                    <label for="UnidadeOrcamentaria"> Unidade Orçamentária</label>
+                </div>
+                <div class="col-1">
+                    <label class="execicioUOServidor" for="UnidadeOrcamentaria">Exercicío </label>
+                </div>
+            </div> --> -->
+            <div class="col col-lg-4 col-md-5 col-sm-6 col-xxl-3">
+                <div class="div-select">
+                    <select class="form-select" name="selectUO" id="selectUO"
+                        aria-label="Selecione Unidade Orçamentaria">
+                        <!-- <select name="selectOrgao" id="selectOrgao" class="custom-select"> -->
+                        <option selected disables>Selecione Unidade Orçamentaria</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-xl-6 col-lg-4">
+                <div class="input-group mb-3">
+                    <span class="input-group-text btn btn-outline-dark"  id="basic-addon1">Exercicío</span>
+                    <input class="inputYearUOServidor" id='YearUOServidor' type="number" class="form-control">
+                </div>
+            </div>
+            <div class="col-xxl-2 col-xl-12 col-lg-12">
+                <button class="btn btn-primary" type="button" id="btnChartUOServidor">Gerar Gráfico</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
