@@ -24,13 +24,16 @@
             <div id="chartsDiariaOrgao"></div>
         </div>
         <form>
-            <div class="row">
-                <div class="labelInput">Informe o Exercicío para Nova Consulta por UO</div>
-                <div class="col-2">
-                    <input class="inputYear" type="number" id="yearUO" class="form-control"
-                        aria-describedby="button-addon2">
+            <div class="row g-2">
+                <!-- <div class="labelInput">Informe o Exercicío para Nova Consulta por UO</div> -->
+                <div class="col-xs-12 col-md-5 col-sm-11">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text btn btn-outline-dark" id="basic-addon1">Exercicío</span>
+                        <input class="inputYear" type="number" id="yearUO" class="form-control"
+                            aria-describedby="button-addon2">
+                    </div>
                 </div>
-                <div class="col-2">
+                <div class="col-xs-3  col-sm-3 col-md-3">
                     <button class="btn btn-primary" type="button" id="btnChartUO">Gerar Gráfico</button>
                 </div>
                 <div class="col-8"> </div>
@@ -55,12 +58,15 @@
             </div>
         </div>
         <form>
-            <div class="row rowServidor">
-                <div class="labelInput">Informe o Exercicío para Nova Consulta por Servidor</div>
-                <div class="col-2">
-                    <input class="inputYear" id='YearServidor' type="number" class="form-control">
+            <div class="row  g-2 rowServidor">
+                <!-- <div class="labelInput">Informe o Exercicío para Nova Consulta por Servidor</div> -->
+                <div class="col-xs-12 col-md-5 col-sm-11 ">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text btn btn-outline-dark" id="basic-addon1">Exercicío</span>
+                        <input class="inputYear" id='YearServidor' type="number" class="form-control">
+                    </div>
                 </div>
-                <div class="col-2">
+                <div class="col-xs-3  col-sm-3 col-md-3">
                     <button class="btn btn-primary" type="button" id="btnChartServidor">Gerar Gráfico</button>
                 </div>
                 <div class="col-8"> </div>
@@ -72,28 +78,22 @@
             </div>
 
             <form>
-                <div class="row">
-                    <div class="row">
-                        <div class="col-3">
-                            <label for="UnidadeOrcamentaria"> Unidade Orçamentária</label>
-                        </div>
-                        <div class="col-1">
-                            <label class="execicioUOServidor" for="UnidadeOrcamentaria">Exercicío </label>
-                        </div>
-                    </div>
-                    <div class="col-3">
+                <div class="row g-2 rowServidor">
+                    <div class="col col-lg-4 col-md-5 col-sm-7 col-xxl-3">
                         <div class="div-select">
                             <select class="form-select" name="selectUO" id="selectUO"
                                 aria-label="Selecione Unidade Orçamentaria">
-                                <!-- <select name="selectOrgao" id="selectOrgao" class="custom-select"> -->
                                 <option selected disables>Selecione Unidade Orçamentaria</option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-2">
-                        <input class="inputYearUOServidor" id='YearUOServidor' type="number" class="form-control">
+                    <div class="col-xxl-3 col-md-5 col-xl-6 col-lg-4">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text btn btn-outline-dark" id="basic-addon1">Exercicío</span>
+                            <input class="inputYearUOServidor" id='YearUOServidor' type="number" class="form-control">
+                        </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-xxl-2 col-md-4 col-xl-12 col-lg-3">
                         <button class="btn btn-primary" type="button" id="btnChartUOServidor">Gerar Gráfico</button>
                     </div>
                 </div>
@@ -109,11 +109,11 @@
                         Funcinários no FIPLAN somente o
                         Total de Diárias do Orgão </p>
                     <ul>
-    
+
                     </ul>
                 </div>
             </div>
-    
+
         </div>
 
 
