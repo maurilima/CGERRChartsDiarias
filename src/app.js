@@ -1,25 +1,14 @@
-import { UO } from "../testar/UO.js";
+// import { UO } from "../testar/UO.js";
 import { renderChartDiariasOrgao } from "./Charts/RenderChartBarDiariasOrgao.js";
 import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServidor.js";
 import { renderChartDiariasUOServidor } from "./Charts/RenderChartBarDiariasUOServidor.js";
 import { loadUO, showMessage } from "./libs/lib.js";
-// import { validateYear } from "./libs/lib.js";
-
-
-// let listUO = UO.map(item => {
-//      return {
-//        codigo : item.codigoUnidadeorcamentaria,
-//        descricao : item.descricaoUnidadeOrcamentaria    
-//      }
-// })
-
-// console.log(listUO)
 
 
 
 let yearToday = new Date().getFullYear();
 
-let btnYearUnidade = document.getElementById("btnChartUO")
+let btnYearUnidade = document.getElementById("btnChartUO");
 btnYearUnidade.addEventListener('click', validateYearUO, true);
 
 let btnChartServidor = document.getElementById("btnChartServidor");
