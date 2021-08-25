@@ -4,8 +4,6 @@ import { parseFloat2Decimals } from '../libs/lib.js';
 
 
 export async function renderChartDiariasOrgao(yearToday){
-     // let yearToday = new Date().getFullYear();
-     //  console.log(yearToday)
      document.getElementById("chartsDiariaOrgao").innerHTML = '&nbsp;';
 
      let divCharts = document.getElementById('chartsDiariaOrgao')

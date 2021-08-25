@@ -1,6 +1,3 @@
-
-
-
 export const listUO =  [
     {
         "codigo": "11101",
