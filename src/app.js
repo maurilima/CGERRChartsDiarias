@@ -4,10 +4,7 @@ import { renderChartDiariasServidor } from "./Charts/RenderChartBarDiariasServid
 import { renderChartDiariasUOServidor } from "./Charts/RenderChartBarDiariasUOServidor.js";
 import { loadUO, showMessage } from "./libs/lib.js";
 
-
-
 let yearToday = new Date().getFullYear();
-
 let btnYearUnidade = document.getElementById("btnChartUO");
 btnYearUnidade.addEventListener('click', validateYearUO, true);
 
@@ -16,8 +13,6 @@ btnChartServidor.addEventListener('click', validateYearServidor, true);
 
 let btnUOServidor = document.getElementById("btnChartUOServidor");
 btnUOServidor.addEventListener('click', validDataUOServidor, true);
-
-
 
 let selectorUO = document.getElementById('selectUO');
 let selectedUO = 0;
@@ -29,7 +24,6 @@ loadUO(selectUO);
 
 document.addEventListener("DOMContentLoaded", function () {
      console.log("DOM completamente carregado e analisado");
-
 
 });
 
@@ -43,11 +37,11 @@ function validDataUOServidor() {
      if (selectedUO === 0) {
           alert("Selecione um Unidade Orçamentaria")
      } else {
-          if (yearUOServidor === '') {
+          if (yearUOServidor === 0) {
                yearUOServidor = yearToday
           }
-          if (validateDate(yearUOServidor, yearToday) ) {
-              renderChartDiariasUOServidor (selectedUO, yearToday)
+          if (validateDate(yearUOServidor, yearUOServidor) ) {
+              renderChartDiariasUOServidor (selectedUO, yearUOServidor)
           }
      }
 

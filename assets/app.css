@@ -1,5 +1,18 @@
 * {
     /* box-shadow: 0px 0px 2px rgba(207, 12, 12, 0.685); */
+    background-color: rgb(252, 252, 252);
+}
+
+.row{
+    margin-top: 1.5rem;
+
+
+}
+#top10uniadade{
+  display: flex;  
+  margin-top: 1rem;
+  padding-top: 1rem;
+     
 }
 
 .tituloUO {
@@ -10,11 +23,13 @@
 }
 
 .tituloServidor {
-    margin-top: 1rem;
+    margin-top: 5rem;
     font-size: 1.2rem;
     margin-bottom: .3rem;
     color: darkgray;
 }
+
+
 
 .chartsbar {
     background-color: rgb(252, 252, 252);
@@ -46,6 +61,7 @@
     padding-left: 3px;
     color: #8697c7;
     margin-left: .5rem;
+    /* margin-top: 2.5rem; */
 }
 
 .legendaUOS {
@@ -70,7 +86,6 @@ p {
 
 .labelInput {
     margin-top: 1rem;
-    ;
     font-size: 1rem;
     color: #172eaf;
     font-style: italic;
@@ -105,9 +120,6 @@ input {
 .execicioUOServidor {
     margin-left: .5rem; 
 
-}
-.inputYearUOServidor{
-    height: 2.3rem
 }
 
 .UOServidor {

@@ -17,21 +17,16 @@ export async function renderChartDiariasUOServidor(selctedUO, yearToday){
           exercicio: yearToday,
           limiteDeRegistros: 10
      }   
-     
-     const retorno = await getApiEndPoint(lraw, URL_TDPSO);
 
+     const retorno = await getApiEndPoint(lraw, URL_TDPSO);
 
      let lSerie = retorno.map(item =>  parseFloat2Decimals(item.total))
    
-      
-   
     let Legends = retorno.map( item  => item.cpf+'-'+item.nomeCredor)    
-    console.log(Legends)
-
     var descr = listUO.find(el => el.codigo === selctedUO )
-     console.log(descr.codigo)
-   
-    Legends.splice(Legends.indexOf(false),1);    
+
+    Legends.splice(Legends.indexOf(false),0);   
+
     listaLegendaSimples(Labels,Legends, '.legendaUOS');
 
      let options = {

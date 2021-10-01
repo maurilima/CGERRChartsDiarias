@@ -40,7 +40,7 @@ export async function renderChartDiariasServidor(yearToday){
        }
     )
         
-    Legends.splice(Legends.indexOf(false),1);    
+    Legends.splice(Legends.indexOf(false),0);    
         
 
      listaLegendaSimples(Labels,Legends, '.legenda');
