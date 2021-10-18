@@ -24,10 +24,11 @@ export async function renderChartDiariasServidor(yearToday){
      //  não á Administração Direta
 
      let lSerie =  retorno.map(item => {
-         if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return parseFloat2Decimals(item.total)
+     //     if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {
+              return parseFloat2Decimals(item.total)
          }
-         else {return false}
-        }
+     //     else {return false}
+     //    }
      )
     
      lSerie.splice(lSerie.indexOf(false),1);
@@ -35,9 +36,10 @@ export async function renderChartDiariasServidor(yearToday){
         
      let Legends = retorno.map( item  => {
         
-        if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {return item.cpf+'-'+item.nomeCredor}
-        else {return false}
-       }
+     //    if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {
+             return item.cpf+'-'+item.nomeCredor}
+     //    else {return false}
+     //   }
     )
         
     Legends.splice(Legends.indexOf(false),0);    
