@@ -1,7 +1,34 @@
-import { listUO } from "../libs/UO.js";
+// import { listUO } from "../libs/UO.js";
+import { getApiEndPoint } from "./getApiEndPoint.js";
+// import listUO from "./UO.js";
+import { URL_UO } from "./urlApi.js";
 
 
 // import Swal from 'sweetalert2/dist/sweetalert2.js' 
+
+
+
+
+export async function getUO(){
+
+  const restUO = await getApiEndPoint('', URL_UO)
+
+  // console.log(restUO)
+  const res =   restUO.map((item) =>{
+       return {
+          "codigo" : item.codigoUnidadeorcamentaria ,
+          "descricao" : item.descricaoUnidadeOrcamentaria,
+          "sigla"  : item.sigla
+               
+       }
+  
+  })
+  // console.log(res)
+  return res
+ 
+}
+
+
 
 export function parseFloat2Decimals(value) {
   if (value != null) {
@@ -24,8 +51,7 @@ export function validateYear(yearSelected, YearToday) {
 }
 
 export function showMessage( ){
-  
-  
+
   Swal.fire({
   icon: 'error',
   title: 'Oops...',
@@ -35,15 +61,25 @@ export function showMessage( ){
 }
 
 
-export function loadUO(selector) { 
-  var listUOSorted = listUO.sort(function(a,b) { 
+export async  function loadUO(selector) { 
+
+  const resListUO = await getUO();
+
+  console.log(resListUO)
+ 
+
+
+
+  var listUOSorted = resListUO.sort(function(a,b) { 
     return a.descricao < b.descricao ? -1 : a.descricao > b.descricao ? 1 : 0;
 
   })
   let elementos = '<option value = "0"  selected disables>Selecione Unidade Orçamentaria </option>';
+
+  // console.log(listUOSorted)
    
   for (let i = 0; i < listUOSorted.length; i++) {
-      elementos += '<option value="' + listUOSorted[i].codigo+ '">' + listUOSorted[i].descricao + '</option>'
+      elementos += '<option value="' + listUOSorted[i].codigo + '">' + listUOSorted[i].descricao + '</option>'
   }
   selector.innerHTML = elementos;
 

@@ -24,11 +24,8 @@ export async function renderChartDiariasServidor(yearToday){
      //  não á Administração Direta
 
      let lSerie =  retorno.map(item => {
-     //     if (item.nomeCredor != "MINISTERIO PUBLICO ESTADUAL") {
               return parseFloat2Decimals(item.total)
          }
-     //     else {return false}
-     //    }
      )
     
      lSerie.splice(lSerie.indexOf(false),1);

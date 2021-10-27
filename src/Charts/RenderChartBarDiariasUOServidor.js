@@ -1,11 +1,14 @@
 import { URL_TDPSO } from "../libs/urlApi.js";
 import { listaLegendaSimples } from "../legenda/listaLeganda.js";
 import { getApiEndPoint } from "../libs/getApiEndPoint.js";
-import { parseFloat2Decimals } from '../libs/lib.js';
-import { listUO } from "../libs/UO.js";
+import { getUO, parseFloat2Decimals } from '../libs/lib.js';
+// import { listUO } from "../libs/UO.js";
 
 let Labels = ['1º','2º','3º','4º','5º','6º','7º','8º','9º','10º', ]
 
+const listUO = await getUO()
+
+// console.log(listUO)
 
 export async function renderChartDiariasUOServidor(selctedUO, yearToday){
      // let yearToday = new Date().getFullYear();
