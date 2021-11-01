@@ -15,13 +15,13 @@ export async function renderChartDiariasUOServidor(selctedUO, yearToday){
 
      document.getElementById("chartsDiariaUOServidor").innerHTML = '&nbsp;';     
      let divCharts = document.getElementById('chartsDiariaUOServidor')
-     let lraw = {
+     let raw = {
           codigoUnidadeOrcamentaria: selctedUO,
           exercicio: yearToday,
           limiteDeRegistros: 10
      }   
 
-     const retorno = await getApiEndPoint(lraw, URL_TDPSO);
+     const retorno = await getApiEndPoint(raw, URL_TDPSO);
 
      let lSerie = retorno.map(item =>  parseFloat2Decimals(item.total))
    
