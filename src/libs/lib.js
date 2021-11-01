@@ -65,7 +65,7 @@ export async  function loadUO(selector) {
 
   const resListUO = await getUO();
 
-  console.log(resListUO)
+  // console.log(resListUO)
  
 
 

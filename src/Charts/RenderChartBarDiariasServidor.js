@@ -111,7 +111,7 @@ export async function renderChartDiariasServidor(yearToday){
                }
           },
           title: {
-               text: 'Top 10 Servidores por Gasto com Diárias Exercico: '+yearToday,
+               text: 'Top 10 de Servidores por Gastos com Diárias Exercicío: '+yearToday,
                align: 'left'
           },
      }

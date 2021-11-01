@@ -65,7 +65,7 @@ export async function renderChartDiariasOrgao(yearToday){
                }
           },
           title: {
-               text: 'Top 10 Unidade Orçamentaria por Gasto com Diárias Exercicio: '+yearToday,
+               text: 'Top 10 por Unidade Orçamentaria, por Gastos com Diárias Exercicío: '+yearToday,
                align: 'left'
           },
      }

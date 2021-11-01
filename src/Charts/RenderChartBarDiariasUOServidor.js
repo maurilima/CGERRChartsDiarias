@@ -97,7 +97,7 @@ export async function renderChartDiariasUOServidor(selctedUO, yearToday){
                }
           },
           title: {
-               text: 'Top 10 Servidores Diárias UO:'+ descr.descricao+  ' Exercico: '+yearToday,
+               text: 'Top 10 Servidores Diárias, UO:'+ descr.descricao+  ' Exercicío: '+yearToday,
                align: 'left'
           },
      }
