@@ -57,7 +57,9 @@ export async function renderChartDiariasServidor(yearToday){
                     borderRadius: 4,
                     horizontal: false,
                     dataLabels: {
-                         position: 'top', // top, center, bottom
+                         position: 'bottom', // top, center, bottom
+                         orientation: "vertical",
+
                     },
                }
           },
@@ -76,7 +78,7 @@ export async function renderChartDiariasServidor(yearToday){
                formatter: function (val, opts) {
                     return val.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                },
-               offsetY: -16,
+               offsetY: 10,
                style: {
                     fontSize: '11px',
                     colors: ["#304758"]

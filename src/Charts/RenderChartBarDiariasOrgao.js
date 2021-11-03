@@ -3,14 +3,14 @@ import { getApiEndPoint } from "../libs/getApiEndPoint.js";
 import { parseFloat2Decimals } from '../libs/lib.js';
 
 
-export async function renderChartDiariasOrgao(yearToday){
+export async function renderChartDiariasOrgao(yearToday) {
      document.getElementById("chartsDiariaOrgao").innerHTML = '&nbsp;';
 
      let divCharts = document.getElementById('chartsDiariaOrgao')
      let lraw = {
           exercicio: yearToday,
           limiteDeRegistros: 10,
-     }   
+     }
      // console.log(lraw, URL_TDSE)  ;
      const retorno = await getApiEndPoint(lraw, URL_TDSE);
      var lSerie = retorno.map(item => parseFloat2Decimals(item.total))
@@ -27,7 +27,8 @@ export async function renderChartDiariasOrgao(yearToday){
                     borderRadius: 4,
                     horizontal: false,
                     dataLabels: {
-                         position: 'top', // top, center, bottom
+                         position: 'bottom', // top, center, bottom
+                         orientation: "vertical",
                     },
                }
           },
@@ -37,8 +38,9 @@ export async function renderChartDiariasOrgao(yearToday){
                     data: lSerie
                }],
           dataLabels: {
-               enabled: true,
+               // enabled: true,
                position: 'top',
+               orientation: "vertical",
                style: {
                     colors: ['#fff'],
                },
@@ -46,7 +48,7 @@ export async function renderChartDiariasOrgao(yearToday){
                formatter: function (val, opts) {
                     return val.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                },
-               offsetY: -16,
+               offsetY: 10,
                style: {
                     fontSize: '11px',
                     colors: ["#304758"]
@@ -65,7 +67,7 @@ export async function renderChartDiariasOrgao(yearToday){
                }
           },
           title: {
-               text: 'Top 10 por Unidade Orçamentaria, por Gastos com Diárias Exercicío: '+yearToday,
+               text: 'Top 10 por Unidade Orçamentaria, por Gastos com Diárias Exercicío: ' + yearToday,
                align: 'left'
           },
      }
@@ -73,4 +75,4 @@ export async function renderChartDiariasOrgao(yearToday){
      let chart = new ApexCharts(divCharts, options)
      chart.render();
 
-    }
+}
