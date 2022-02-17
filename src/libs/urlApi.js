@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://aplicacoes.segad.rr.gov.br:8080/transparencia/';     // ****** Desenv.
+export const BASE_URL = 'https://aplicacoes.segad.rr.gov.br/transparencia/';     // ****** Desenv.
 
 //  export const BASE_URL = 'https://transparencia.rr.gov.br/transparencia-api/';   // ***** Producao 
 export const URL_TDSE  = 'api/v1/diarias/totais-diarias-por-secretaria-por-exercicio?';
